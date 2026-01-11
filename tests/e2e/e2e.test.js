@@ -21,9 +21,10 @@ describe('Credit Card Validator form', () => {
     });
 
     browser = await puppeteer.launch({
-      headless: true, 
+      headless: true,
       slowMo: 250,
       devtools: false,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     page = await browser.newPage();
@@ -31,8 +32,12 @@ describe('Credit Card Validator form', () => {
   });
 
   afterAll(async () => {
-    await browser.close();
-    server.kill();
+    if (browser) {
+      await browser.close();
+    }
+    if (server) {
+      server.kill();
+    }
   });
 
   test('should validate a valid card number', async () => {
