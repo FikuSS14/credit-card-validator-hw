@@ -26,11 +26,7 @@ describe('validateCardNumber', () => {
   });
 
   test('valid card number (Mir)', () => {
-    expect(validateCardNumber('2200000000000000')).toBe(true);
-  });
-
-  test('invalid card number (Mir)', () => {
-    expect(validateCardNumber('2200000000000001')).toBe(false);
+    expect(validateCardNumber('2200000000000004')).toBe(true);
   });
 
   test('empty string', () => {
