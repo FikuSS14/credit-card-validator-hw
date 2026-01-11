@@ -1,4 +1,4 @@
-import { validateCardNumber } = from('../../src/utils/validateCard.js');
+import { validateCardNumber } from '../../src/utils/validateCard.js';
 
 describe('validateCardNumber', () => {
   test('valid card number (Visa)', () => {
